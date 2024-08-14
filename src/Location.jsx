@@ -18,6 +18,9 @@ function Location() {
                 setCityData([]);
                 setCitySelected("");
             })
+            .catch((error) => {
+                alert("Something went wrong!")
+            })
     }
     const handleGetState = (country) => {
         axios
