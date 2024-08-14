@@ -30,12 +30,18 @@ function Location() {
                 setCityData([]);
                 setCitySelected("");
             })
+            .catch((error) => {
+                alert("Something went wrong!")
+            })
     }
     const handleGetCity = (country, state) => {
         axios
             .get(` https://crio-location-selector.onrender.com/country=${country}/state=${state}/cities`)
             .then((response) => {
                 setCityData(response.data);
+            })
+            .catch((error) => {
+                alert("Something went wrong!")
             })
     }
 
